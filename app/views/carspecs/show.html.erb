@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Spectype:</b>
+  <%= @carspec.spectype %>
+</p>
+
+<p>
+  <b>Specname:</b>
+  <%= @carspec.specname %>
+</p>
+
+
+<%= link_to 'Edit', edit_carspec_path(@carspec) %> |
+<%= link_to 'Back', carspecs_path %>

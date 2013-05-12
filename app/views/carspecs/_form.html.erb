@@ -1,0 +1,25 @@
+<%= form_for(@carspec) do |f| %>
+  <% if @carspec.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@carspec.errors.count, "error") %> prohibited this carspec from being saved:</h2>
+
+      <ul>
+      <% @carspec.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :spectype %><br />
+    <%= f.text_field :spectype %>
+  </div>
+  <div class="field">
+    <%= f.label :specname %><br />
+    <%= f.text_field :specname %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

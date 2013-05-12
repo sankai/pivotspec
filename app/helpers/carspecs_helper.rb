@@ -1,0 +1,2 @@
+module CarspecsHelper
+end

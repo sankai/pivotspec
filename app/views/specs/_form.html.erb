@@ -1,0 +1,25 @@
+<%= form_for(@spec) do |f| %>
+  <% if @spec.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spec.errors.count, "error") %> prohibited this spec from being saved:</h2>
+
+      <ul>
+      <% @spec.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :spectype %><br />
+    <%= f.text_field :spectype %>
+  </div>
+  <div class="field">
+    <%= f.label :specname %><br />
+    <%= f.text_field :specname %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

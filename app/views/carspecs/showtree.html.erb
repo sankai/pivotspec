@@ -1,0 +1,23 @@
+<h1>Tree View</h1>
+
+<table border="1">
+  <% @cube.getAxises.each do | name, values | %>
+    <tr>
+      <td><%= name %></td>
+      <% values.each do | value | %>
+        <td><%= value %></td>
+      <% end %>
+    </tr> 
+  <% end %>
+</table>
+<br>
+
+<table border="1">
+  <tr>
+  <% @cube.getRootNode().getAllChildren().each do | aNode | %>
+    <td rowspan="<%= aNode.numberOfLeaf( 0 ) %>" valign="top" width="80" > <%= aNode.getValue %></td>
+    <%= '</tr><tr>'.html_safe if aNode.endOfRow? %>
+  <% end %>
+  </tr>
+</table>
+

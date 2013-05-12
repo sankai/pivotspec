@@ -1,0 +1,25 @@
+<h1>Listing carspecs</h1>
+
+<table>
+  <tr>
+    <th>Spectype</th>
+    <th>Specname</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @carspecs.each do |carspec| %>
+  <tr>
+    <td><%= carspec.spectype %></td>
+    <td><%= carspec.specname %></td>
+    <td><%= link_to 'Show', carspec %></td>
+    <td><%= link_to 'Edit', edit_carspec_path(carspec) %></td>
+    <td><%= link_to 'Destroy', carspec, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Carspec', new_carspec_path %>
